@@ -124,6 +124,11 @@
       margin: 0px;
     }
   </style>
+  <script>
+  window.onload = function() {
+      document.getElementById("search").focus();
+  };
+  </script>
 </head>
 <body>
   <div class="headbar">
@@ -135,7 +140,7 @@
   </div>
   <div class="content">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png" class="logo"></img>
-    <input class="searchbar"></input>
+    <input id="search" class="searchbar"></input>
     <div class="buttons">
       <button class="searchbutton bone">Google Search</button>
       <button class="searchbutton btwo">I'm Feeling Lucky</button>
