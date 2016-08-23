@@ -1,27 +1,27 @@
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script language="javascript">
-		window.onload = function() { loadData(0) }
-		function changestatus(elem) {
-			elem.style.backgroundColor = "#000000";
-		}
-		function getResetValue() {
-			squares = window.prompt("Please enter a new grid size to display. Your input is the number of squares on each side.", 0);
-			loadData(parseInt(squares));
-		}
-		function loadData(x) {
-			if (x === 0)
-				x = 50;
-			var element="";
-			for (j = 0; j < x; j++) {
-				var element = element.concat(("<div style= \"background-color:#ffffff; width:{0}vw; height:{0}vh;float:right;clear:left;\" onmouseover=\"changestatus(this)\"></div>").replace(/\{0\}/g, (90/x).toFixed(2)));
-			}
-			var row = "<div style=\"width:90vw; height:1.8vh;\" class=\"row\">" + element + "</div>";
-			$("#container").html(jQuery(Array(x+1).join(row)));
-		}
-	</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script language="javascript">
+    window.onload = function() { loadData(0) }
+    function changestatus(elem) {
+      elem.style.backgroundColor = "#000000";
+    }
+    function getResetValue() {
+      squares = window.prompt("Please enter a new grid size to display. Your input is the number of squares on each side.", 0);
+      loadData(parseInt(squares));
+    }
+    function loadData(x) {
+      if (x === 0)
+        x = 50;
+      var element = "";
+      for (j = 0; j < x; j++) {
+        element = element.concat(("<div style= \"background-color:#ffffff; width:{0}vw; height:{0}vh;float:right;clear:left;\" onmouseover=\"changestatus(this)\"></div>").replace(/\{0\}/g, (90/x).toFixed(2)));
+      }
+      var row = "<div style=\"width:90vw; height:1.8vh;\" class=\"row\">" + element + "</div>";
+      $("#container").html(jQuery(Array(x+1).join(row)));
+    }
+  </script>
 </head>
 <body>
-	<button type="button" onclick="getResetValue()" style="height:5vh;width:5vw;margin:0 auto;display:block;">Reset</button>
-	<div id="container" style="margin:auto;width:90vw;height:90vh;"></div>
+  <button type="button" onclick="getResetValue()" style="height:5vh;width:5vw;margin:0 auto;display:block;">Reset</button>
+  <div id="container" style="margin:auto;width:90vw;height:90vh;"></div>
 </body>
